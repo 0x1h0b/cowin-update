@@ -56,14 +56,13 @@ Hi,
 ** VACCINE SLOT UPDATE **
 '''
     footer = '''
-
 Above results are bot generated.
 Best Regards
 0x1h0b
 '''
     msg_string=''
     if all_payload=='':
-        msg_string = header+all_payload+'\n No new slots available for 18+ age group.\n'+footer
+        msg_string = header+all_payload+'\nNo new slots available for 18+ age group.'+footer
         return msg_string,False
     else:
         msg_string=header+all_payload+footer
