@@ -56,7 +56,6 @@ Hi,
 ** VACCINE SLOT UPDATE **
 '''
     footer = '''
-    
 Above results are bot generated.
 Best Regards
 0x1h0b
@@ -101,10 +100,9 @@ if __name__=='__main__':
             output,flag = query(data)
             print('Output:\n',output)
             print('Msg Flag:',flag)
-            if flag:
+            if flag==True:
                 mail_alert('[BOT][Vaccine Update:-)',output,'himanshubag12@gmail.com')
         except Exception as e:
             print(str(e))
-            output = "Hi \n following error occurred: "+str(e)
-            mail_alert('[BOT] Vaccine Update !!!',output,'himanshubag12@gmail.com')
+            #mail_alert('[BOT] Vaccine Update !!!',str(e),'himanshubag12@gmail.com')
         sleep(60*3)
