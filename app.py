@@ -56,6 +56,7 @@ Hi,
 ** VACCINE SLOT UPDATE **
 '''
     footer = '''
+    
 Above results are bot generated.
 Best Regards
 0x1h0b
