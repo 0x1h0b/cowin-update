@@ -62,20 +62,18 @@ Best Regards
 0x1h0b
 '''
     msg_string=''
-    send_msg=False
     if all_payload=='':
         msg_string = header+all_payload+'\n No new slots available for 18+ age group.\n'+footer
+        return msg_string,False
     else:
         msg_string=header+all_payload+footer
-        send_msg = True
-
-    return msg_string,send_msg
+        return msg_string,True
 
 
 
 def mail_alert(subject,body,to):
     msg=EmailMessage()
-    msg.set_content = subject
+    msg.set_content = body
     msg['subject'] = subject
     msg['to']=to
 
@@ -101,11 +99,12 @@ if __name__=='__main__':
             res = requests.get(url)
             data = eval(res.text)
             output,flag = query(data)
-            print(output)
+            print('Output:\n',output)
+            print('Msg Flag:',flag)
             if flag:
-                mail_alert('[BOT][Vaccine Update !!',output,'himanshubag12@gmail.com')
+                mail_alert('[BOT][Vaccine Update:-)',output,'himanshubag12@gmail.com')
         except Exception as e:
             print(str(e))
             output = "Hi \n following error occurred: "+str(e)
-            mail_alert('[BOT] Vaccine Update !!',output,'himanshubag12@gmail.com')
+            mail_alert('[BOT] Vaccine Update !!!',output,'himanshubag12@gmail.com')
         sleep(60*3)
