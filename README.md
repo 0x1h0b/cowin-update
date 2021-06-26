@@ -1,4 +1,4 @@
 # cowin-update
 
 
-gives vaccine slot avalaible update via mail notification for my area. < Personal Use >
+gives vaccine slot available update via mail notification for my area. < Personal Use >
